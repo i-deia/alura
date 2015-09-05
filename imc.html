@@ -1,0 +1,28 @@
+<meta charset = "UTF-8">
+
+<script>
+
+var pulaLinha = function() {
+    document.write("<br>");
+};
+
+var mostra = function(frase) {
+    document.write(frase);
+    pulaLinha();
+};
+
+var calculaIMC = function(altura, peso) {
+    var imc = peso / (altura * altura);
+    mostra("IMC calculado é " + imc);
+	mostra("Você está a " + (35 - imc) + " pontos da obesidade severa.");
+	if(imc > 18.5 && imc < 35) {
+	    mostra("OK! Seu IMC está entre os dois limites.");
+	}
+};
+
+var peso = 75;
+var altura = 1.55;
+calculaIMC(altura, peso);
+
+
+</script>

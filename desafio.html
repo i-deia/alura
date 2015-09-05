@@ -1,0 +1,78 @@
+<meta charset = "UTF-8">
+
+<input type="text" id="tentativa" />
+<input type="submit" value="Adicione e verifique no Bingo!"
+                    id="verificar"/>
+<script>
+var sorteados = [];
+var palpites = [];
+var i = 0;
+var m = 0;
+var p = 0;
+
+alert("funciona!");
+
+while (i < 6) {
+	var numero = Math.round(Math.random() * 59) + 1;
+	var checar = false
+	for (m = 0; m < sorteados.length; m++) {
+		if (sorteados[m] == numero) {
+			checar = true;
+			break;
+		} 
+	}
+	if (checar == false) {
+		sorteados.push(numero);
+		console.log(sorteados);
+		i++;
+	}
+}
+
+var chute = document.getElementById("tentativa");
+var acertos = 0;
+
+var checarSorteado = function () {
+	if (parseInt(chute.value) > 60 || parseInt(chute.value) < 1) {
+		alert("Escolha um número entre 1 e 60.");
+		return;
+	}
+	if (p < 6) {
+		checar = false
+		for (i = 0; i < palpites.length; i++) {
+	 		if (palpites[i] == parseInt(chute.value)) {
+				alert("Número já escolhido. Escolha outro número.");
+				checar = true;
+				return;
+			}
+		}
+		if (checar == false) {
+			p++;
+			palpites.push(parseInt(chute.value));
+			console.log(palpites);
+		} 	
+	} 
+	for (var c = 0; c < sorteados.length; c++) {
+		if (sorteados[c] == parseInt(chute.value)) {
+			acertos++;
+			break;
+		} 
+	} 
+	if (p==6) {
+		document.write ("Você escolheu os números: " + palpites + ". <br>");
+		document.write ("Os números sorteados foram: " + sorteados + ". <br>");
+		if (acertos == 0) {
+			document.write ("Que pena! Você não acertou nenhum número.");
+		} else {
+			if (acertos == 6) {
+				document.write ("Parabéns! Você acertou todos os números.");
+			} else {
+				document.write ("Muito bem! Você acertou: " + acertos + " números.");
+			}
+		}
+	}
+}
+
+var botao = document.getElementById("verificar");
+botao.onclick = checarSorteado;
+
+</script>

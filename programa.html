@@ -1,0 +1,35 @@
+<meta charset = "UTF-8">
+
+<script>
+var anoAtual = 2015
+var anoDescobrimento = 1500
+var media = 28
+var geracoes = Math.round((anoAtual-anoDescobrimento)/media)
+
+var pulaLinha = function() {
+    document.write("<br>");
+};
+
+var mostra = function(frase) {
+    document.write(frase);
+    pulaLinha();
+};
+
+mostra("Se passaram " + geracoes + " gerações até o ano de " + anoAtual + ".")
+
+var eu = 38
+var irmao = 34
+var diferenca = eu - irmao
+
+mostra("Nossa diferença de idade é de " + diferenca + " anos.")
+
+mostra("Usando funções para melhorar o código");
+
+var ano = 2012;
+document.write("Eu nasci em : " + (ano - 25));
+pulaLinha();
+document.write("Adriano nasceu em : " + (ano - 26));
+pulaLinha();
+document.write("Paulo nasceu em : " + (ano - 32));
+pulaLinha();
+</script>

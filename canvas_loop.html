@@ -1,0 +1,45 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+
+var quadradoVerde = function (x,y) {
+	var tela = document.getElementById("tela");
+	var c = tela.getContext("2d");
+
+	c.fillStyle = "green";
+	c.fillRect(x,y,50,50);
+	
+	c.strokeFill = "black";
+	c.strokeRect(x,y,50,50)
+}
+
+var quadradoVermelho = function (x,y) {
+	var tela = document.getElementById("tela");
+	var c = tela.getContext("2d");
+
+	c.fillStyle = "red";
+	c.fillRect(x,y,50,50);
+	
+	c.strokeFill = "black";
+	c.strokeRect(x,y,50,50)
+}
+
+var bolaAzul = function (x,y) {
+	var tela = document.getElementById("tela");
+	var c = tela.getContext("2d");
+
+	c.fillStyle = "blue";
+	c.beginPath();
+	c.arc(x,y,25,0,2*3.14);
+	c.fill();
+
+}
+
+var x = 0;
+while (x < 600) {
+	quadradoVerde(x,0);
+	quadradoVermelho(x,50);
+	bolaAzul(x,100)
+	x += 50;
+}
+</script>

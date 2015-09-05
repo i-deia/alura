@@ -1,0 +1,31 @@
+<canvas id="colombia" width="600" height="400"></canvas>
+<canvas id="madagascar" width="600" height="400"></canvas>
+
+<script>
+
+var colombia = document.getElementById("colombia");
+var c = colombia.getContext("2d");
+
+c.fillStyle = "yellow";
+c.fillRect(0,0,600,200);
+
+c.fillStyle = "blue";
+c.fillRect(0,200,600,100);
+
+c.fillStyle = "red";
+c.fillRect(0,300,600,100);
+
+var madagascar = document.getElementById("madagascar");
+var m = madagascar.getContext("2d");
+
+m.fillStyle = "white";
+m.fillRect(0,0,200,400);
+
+m.fillStyle = "red";
+m.fillRect(200,0,400,200);
+
+m.fillStyle = "green";
+m.fillRect(200,200,400,200);
+
+
+</script>
